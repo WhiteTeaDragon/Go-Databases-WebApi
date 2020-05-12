@@ -1,0 +1,13 @@
+curl -i localhost:3000/users
+curl -i localhost:3000/calls
+curl -X GET -H "Content-Type: application/json" -d "{ \"id\":1 }" -i localhost:3000/users/show
+curl -X GET -H "Content-Type: application/json" -d "{ \"id\":1 }" -i localhost:3000/calls/show
+curl -X GET -H "Content-Type: application/json" -d "{ \"seller\": 18 }" -i localhost:3000/calls/showBySeller
+curl -X GET -H "Content-Type: application/json" -d "{ \"customer\": 179 }" -i localhost:3000/calls/showByCustomer
+curl -X GET -H "Content-Type: application/json" -d "{ \"customer\": 179, \"seller\":18 }" -i localhost:3000/calls/showBySelCus
+curl -X POST -H "Content-Type: application/json" -d "{ \"name\":\"Mikey\", \"lastname\":\"Way\" }" http://localhost:3000/users/create -v
+curl -X POST -H "Content-Type: application/json" -d "{ \"seller\":18, \"customer\":179, \"callTimestamp\":\"1111-01-02 12:23:23\" }" -v http://localhost:3000/calls/create
+curl -X PUT -H "Content-Type: application/json" -d "{ \"id\":100, \"name\":\"POOOLINA\", \"lastname\":\"Way\" }" -v http://localhost:3000/users/update
+curl -X PUT -H "Content-Type: application/json" -d "{ \"id\":2, \"seller\":1001, \"customer\":12, \"callTimestamp\":\"1122-01-01 12:34:43\"}" -v http://localhost:3000/calls/update
+curl -X DELETE -H "Content-Type: application/json" -d "{ \"id\":15 }" -v http://localhost:3000/users/delete
+curl -X DELETE -H "Content-Type: application/json" -d "{ \"id\":7 }" -v http://localhost:3000/calls/delete
